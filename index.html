@@ -9,17 +9,23 @@
 <body>
     <header> 
         <div id="pageTitle"><h1>Coding Quiz</h1></div>
-        <div id="timer">Time Left:<span id="timerValue"></span></div>
+        <div id="timer">Time Left: <span id="timerValue"></span></div>
     </header>
-    <main id="quizMaterial">
-        <h2 id="gameDescription">
+    <div id="quizMaterial">
+        <h2 class="gameDescription">
             Click the button below to quiz yourself on 
             HTML, CSS, and JavaScript topics like timers, event listeners,
             and functions. 
         </h2>
-        <button id="activationBtn">Click to Begin!</button>
-        <div id="highScoresCont"><p id="highScoresValue"></p></div>
-    </main>
+        <h2 class="gameDescription">
+            You will have 45 seconds to guess as many questions as you can.
+            Improve your score as you climb the leaderboard!
+        </h2>
+        <button class="btn" id="activationBtn">Click to Begin!</button>
+        <button class="btn"><a href="score.html" id="highscorelink">Click to View High Score!</a></button>
+    </div>
+    <h2 id="questions"></h2>
+    <ul id="answers"></ul>
     <script src="script.js"></script>
 </body>
 </html>

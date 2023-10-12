@@ -17,16 +17,6 @@ header {
     text-align: left;
 }
 
-#highScoresBtn {
-    font-size: 15px;
-    border:none;
-    border-radius: 20px;
-    background-color: #2C5F2D;
-    color: white;
-    padding: 14px 34px;
-    cursor: pointer;
-}
-
 #pageTitle {
     text-align: center;
     font-size: 30px;
@@ -35,6 +25,9 @@ header {
 
 #timer {
     text-align: right;
+    font-size: 25px;
+    padding-right: 20px;
+    font-weight: bold;
 }
 
 #quizMaterial {
@@ -43,10 +36,10 @@ header {
     padding-top:100px;
 }
 
-#gameDescription {
+.gameDescription {
     padding: 100px 0px 50px 0px;
 }
-#activationBtn {
+.btn {
     border: none;
     background-color: #2C5F2D;
     border-radius: 25px;
@@ -56,4 +49,12 @@ header {
     margin: 16px 16px 16px 20px;
     padding: 14px 34px;
     cursor: pointer;
+}
+#nextButton {
+    display:none;
+}
+
+#highscorelink {
+    color: white;
+    text-decoration: none;
 }
