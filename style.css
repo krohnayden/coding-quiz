@@ -1,5 +1,5 @@
 body {
-    background-color: #C46D6D;
+    background-color: #97BC62;
 }
 
 header {
@@ -15,6 +15,16 @@ header {
 
 #highScores {
     text-align: left;
+}
+
+#highScoresBtn {
+    font-size: 15px;
+    border:none;
+    border-radius: 20px;
+    background-color: #2C5F2D;
+    color: white;
+    padding: 14px 34px;
+    cursor: pointer;
 }
 
 #pageTitle {
@@ -38,9 +48,9 @@ header {
 }
 #activationBtn {
     border: none;
-    background-color: hsl(360, 91%, 36%);
+    background-color: #2C5F2D;
     border-radius: 25px;
-    color: hsl(0, 0%, 100%);
+    color: white;
     font-size: 22px;
     line-height: 22px;
     margin: 16px 16px 16px 20px;
