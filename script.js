@@ -4,7 +4,7 @@ const mainEl = document.querySelector("#quizMaterial");
 const activationBtnEl = document.querySelector("#activationBtn");
 const questionEl = document.querySelector("#questions");
 const answersEl = document.querySelector("#answers");
-
+var timeLeft = 5;
 // Index of question, answers, and whether they are correct or incorrect.
 var questions = [
     {
@@ -60,7 +60,6 @@ let score = 0;
 // Added event lisner to perform a function on the click of the start button.
 // The function starts the timer for the quiz and deletes and appends data on the screen.
 activationBtnEl.addEventListener("click", function() {
-    var timeLeft = 10;
     mainEl.remove();
     startQuiz(currentQuestionIndex);
         var timeInterval = setInterval(function () {
@@ -73,7 +72,7 @@ activationBtnEl.addEventListener("click", function() {
             } else {
             timerEl.textContent = '';
             clearInterval(timeInterval);
-            displayMessage();
+            endQuiz();
             }
         }, 1000);
 })
@@ -81,6 +80,7 @@ activationBtnEl.addEventListener("click", function() {
 function startQuiz(currentQuestionIndex) {
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex +1;
+    console.log(currentQuestionIndex);
     questionEl.innerHTML = questionNo + ". " + currentQuestion.question;
 
     currentQuestion.answers.forEach(answer => {
@@ -98,7 +98,13 @@ function displayMessage() {
 // Need something to check correctness and automatically move to the next question.
 answersEl.addEventListener("click", function(e) {
     var dataCorrectness= (e.target.getAttribute("data-correct"));
-    currentQuestionIndex = currentQuestionIndex + 1
+    console.log(questions.length);
+    if (currentQuestionIndex < questions.length -1) {
+        currentQuestionIndex = currentQuestionIndex + 1
+    } else if(currentQuestionIndex >= questions.length -1) {
+        return endQuiz();
+    }
+
     console.log(typeof dataCorrectness);
     if ( dataCorrectness === "true") {
         answersEl.textContent = "Correct!";
@@ -106,17 +112,17 @@ answersEl.addEventListener("click", function(e) {
         return;
     } else {
         answersEl.textContent = "Incorrect!";
+        timeLeft = timeLeft - 5;
     }
     startQuiz(currentQuestionIndex);
 })
 
+function endQuiz() {
+    location.replace("./score.html");
+    console.log("hello");
+}
 
-// Need two function to bring the questions to the screen, 
-// Attributing a data tag for correct and incorrect answers. (.setAttribute)
-// Build function that when the boolean equals false, subtract x amount of seconds.
-// When all questions are answered or the timer equals 0, the quiz is over.
-// Use the timer function to bring the page for high scores foward when the timer equals 0.
-// When the user reaches the end of the array of questions, they will be brought to the high scores page.
+
 // Use local storage to store user data - (initials + score)
 // Add click event to high score button to bring up the high score page. 
 // Append exiting HTML with
