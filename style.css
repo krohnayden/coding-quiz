@@ -2,7 +2,7 @@ body {
     background-color: #97BC62;
 }
 
-header {
+#mainHeader {
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -57,4 +57,25 @@ header {
 #highscorelink {
     color: white;
     text-decoration: none;
+}
+
+#btnDiv {
+    text-align: center;
+}
+
+#scoreBtn {
+    border: none;
+    background-color: #2C5F2D;
+    border-radius: 25px;
+    color: white;
+    font-size: 22px;
+    line-height: 22px;
+    margin: 16px 16px 16px 20px;
+    padding: 14px 34px;
+    cursor: pointer;
+}
+
+#scoreBtn a{
+    text-decoration: none;
+    color: white;
 }

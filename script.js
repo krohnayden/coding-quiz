@@ -4,7 +4,8 @@ const mainEl = document.querySelector("#quizMaterial");
 const activationBtnEl = document.querySelector("#activationBtn");
 const questionEl = document.querySelector("#questions");
 const answersEl = document.querySelector("#answers");
-var timeLeft = 5;
+
+var timeLeft = 20;
 // Index of question, answers, and whether they are correct or incorrect.
 var questions = [
     {
