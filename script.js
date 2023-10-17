@@ -4,7 +4,7 @@ const mainEl = document.querySelector("#quizMaterial");
 const activationBtnEl = document.querySelector("#activationBtn");
 const questionEl = document.querySelector("#questions");
 const answersEl = document.querySelector("#answers");
-var timeLeft = 45;
+var timeLeft = 30;
 var score = 0;
 
 // Index of question, answers, and whether they are correct or incorrect.
@@ -131,8 +131,3 @@ function endQuiz() {
     localStorage.setItem("scores", score);
     location.replace("./score.html");
 }
-
-
-
-// Use local storage to store user data - (initials + score)
-// Append exiting HTML with
