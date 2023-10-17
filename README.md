@@ -12,18 +12,21 @@ To open the quiz, open the URL provided in the usage section. You will be brough
 Then, click on the button called, "Click to Begin!". This will automatically start the timer for the quiz and bring the first question to the screen. As you complete the quiz, you will be told whether you were correct or incorrect. If you are incorrect, 5 seconds will be deducted from the total time left. Once all questions are answered or time runs out, you will be brought to another page where your score will be displayed. There, you can view your score, input your initials, or click the "Return" button to start the quiz again.
 
 
-![alt text](Images/Screenshot 2023-10-16 at 10.29.06 PM.png)
+![alt text](Images/quiz-screenshot-1.png)
 
-![alt text](Images/Screenshot 2023-10-16 at 10.29.14 PM.png)
+![alt text](Images/quiz-screenshot-2.png)
 
+![alt text](Images/quiz-screenshot-3.png)
 
-Link to Deployed Application: https://krohnayden.github.io/password-generator/
+![alt text](Images/quiz-screenshot-4.png)
 
-Link to GitHub Repository: https://github.com/krohnayden/password-generator
+![alt text](Images/quiz-screenshot-5.png)
+
+Link to Deployed Application: https://krohnayden.github.io/coding-quiz/
+
+Link to GitHub Repository: https://github.com/krohnayden/coding-quiz
 
 ## Credits
-Starter code provided from: https://github.com/coding-boot-camp/friendly-parakeet
-
 I followed tutorials from Mozilla and W3 schools.
 
 Mozilla: https://developer.mozilla.org/en-US/docs/Web/JavaScript
