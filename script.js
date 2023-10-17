@@ -4,12 +4,13 @@ const mainEl = document.querySelector("#quizMaterial");
 const activationBtnEl = document.querySelector("#activationBtn");
 const questionEl = document.querySelector("#questions");
 const answersEl = document.querySelector("#answers");
+var timeLeft = 45;
+var score = 0;
 
-var timeLeft = 20;
 // Index of question, answers, and whether they are correct or incorrect.
 var questions = [
     {
-        question: "What coding language is used for the backbone struture of most websites?",
+        question: "What coding language is used for the backbone structure of most websites?",
         answers: [
             { text: "HTML", correct: true},
             { text: "CSS", correct: false},
@@ -53,12 +54,19 @@ var questions = [
             { text: "console.log(openWindow)", correct: false},
             ]
     },
+    {
+        question: "What does a query selector do?",
+        answers: [
+            { text: "Adds a new class to an HTML element.", correct: false},
+            { text: "Makes local elements in a function available globally.", correct: false},
+            { text: "It .", correct: true},
+        ]
+    },
 ]
 
 let currentQuestionIndex = 0;
-let score = 0;
 
-// Added event lisner to perform a function on the click of the start button.
+// Added event listener to perform a function on the click of the start button.
 // The function starts the timer for the quiz and deletes and appends data on the screen.
 activationBtnEl.addEventListener("click", function() {
     mainEl.remove();
@@ -80,8 +88,7 @@ activationBtnEl.addEventListener("click", function() {
 
 function startQuiz(currentQuestionIndex) {
     let currentQuestion = questions[currentQuestionIndex];
-    let questionNo = currentQuestionIndex +1;
-    console.log(currentQuestionIndex);
+    let questionNo = currentQuestionIndex + 1;
     questionEl.innerHTML = questionNo + ". " + currentQuestion.question;
 
     currentQuestion.answers.forEach(answer => {
@@ -93,37 +100,39 @@ function startQuiz(currentQuestionIndex) {
     })
 }
 
-function displayMessage() {
-    timerEl.textContent = "Time's Up!"
-}
 // Need something to check correctness and automatically move to the next question.
 answersEl.addEventListener("click", function(e) {
     var dataCorrectness= (e.target.getAttribute("data-correct"));
-    console.log(questions.length);
+
+
     if (currentQuestionIndex < questions.length -1) {
         currentQuestionIndex = currentQuestionIndex + 1
     } else if(currentQuestionIndex >= questions.length -1) {
         return endQuiz();
     }
 
-    console.log(typeof dataCorrectness);
     if ( dataCorrectness === "true") {
         answersEl.textContent = "Correct!";
+        score ++;
+        // highScoreEl.textContent = score;
     } else if ( dataCorrectness === null) {
         return;
     } else {
         answersEl.textContent = "Incorrect!";
         timeLeft = timeLeft - 5;
     }
+    
+
     startQuiz(currentQuestionIndex);
 })
 
 function endQuiz() {
+    console.log(score);
+    localStorage.setItem("scores", score);
     location.replace("./score.html");
-    console.log("hello");
 }
 
 
+
 // Use local storage to store user data - (initials + score)
-// Add click event to high score button to bring up the high score page. 
 // Append exiting HTML with

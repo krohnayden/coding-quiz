@@ -39,6 +39,7 @@ body {
 .gameDescription {
     padding: 100px 0px 50px 0px;
 }
+
 .btn {
     border: none;
     background-color: #2C5F2D;
@@ -61,6 +62,7 @@ body {
 
 #btnDiv {
     text-align: center;
+    padding-top: 100px;
 }
 
 #scoreBtn {
@@ -78,4 +80,25 @@ body {
 #scoreBtn a{
     text-decoration: none;
     color: white;
+}
+
+#questions {
+    text-align: center;
+    padding-top: 200px;
+}
+#answers {
+    font-size: 22px;
+    text-align: center;
+    padding-top: 45px;
+}
+#highScoreDisplay {
+    text-align:center;
+    font-size: 30px;
+    font-style: bold;
+    padding-top: 50px;
+}
+#initials {
+    text-align:center;
+    padding-top: 50px;
+    font-size: 20px;
 }
