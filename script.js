@@ -54,14 +54,6 @@ var questions = [
             { text: "console.log(openWindow)", correct: false},
             ]
     },
-    {
-        question: "What does a query selector do?",
-        answers: [
-            { text: "Adds a new class to an HTML element.", correct: false},
-            { text: "Makes local elements in a function available globally.", correct: false},
-            { text: "It .", correct: true},
-        ]
-    },
 ]
 
 let currentQuestionIndex = 0;
@@ -114,20 +106,16 @@ answersEl.addEventListener("click", function(e) {
     if ( dataCorrectness === "true") {
         answersEl.textContent = "Correct!";
         score ++;
-        // highScoreEl.textContent = score;
     } else if ( dataCorrectness === null) {
         return;
     } else {
         answersEl.textContent = "Incorrect!";
         timeLeft = timeLeft - 5;
     }
-    
-
     startQuiz(currentQuestionIndex);
 })
 
 function endQuiz() {
-    console.log(score);
     localStorage.setItem("scores", score);
     location.replace("./score.html");
 }
